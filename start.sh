@@ -6,6 +6,12 @@ if [[ -z "${KC_HOSTNAME}" ]]; then
 	KC_HOSTNAME_STRICT="false"
 fi
 
+echo "Check";
+
+echo "${KC_HOSTNAME}";
+
+echo "${POSTGRESQL_ADDON_HOST}";
+
 # Check if a postgres or mysql addon is linked to this application, in order to get the URI of database
 if [[ -z "${POSTGRESQL_ADDON_HOST}" ]]; then
 	KC_DB_URL="jdbc:${POSTGRESQL_ADDON_HOST}"
