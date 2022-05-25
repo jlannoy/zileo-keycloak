@@ -26,6 +26,8 @@ CC_RUN_COMMAND="./start.sh"
 KEYCLOAK_VERSION="17.0.0"
 ```
 
+You can check for the last Keycloak version [here](https://github.com/keycloak/keycloak/releases).
+
 First of all, adapt the `KC_DB_POOL_INITIAL_SIZE`, `KC_DB_POOL_MIN_SIZE`, `KC_DB_POOL_MAX_SIZE` variables according to the database plan you choose. By default, it's been configured for the DEV plan (limited to 5 connections).
 
 Define your initial admin account with `KEYCLOAK_ADMIN`and `KEYCLOAK_ADMIN_PASSWORD`
