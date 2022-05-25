@@ -14,12 +14,12 @@ rm keycloak-${KEYCLOAK_VERSION}.zip
 echo "Keycloak ${KEYCLOAK_VERSION} downloaded and unzipped successfuly"
 
 # Load the database driver, depending on the addon linked
-if [[ -z "${POSTGRESQL_ADDON_HOST}" ]]; then
+if [[ -n "${POSTGRESQL_ADDON_HOST}" ]]; then
 	KC_DB="postgres"
 fi
 
 
-if [[ -z "${MYSQL_ADDON_HOST}" ]]; then
+if [[ -n "${MYSQL_ADDON_HOST}" ]]; then
 	KC_DB="mysql"
 fi
 
