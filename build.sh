@@ -15,11 +15,11 @@ echo "Keycloak ${KEYCLOAK_VERSION} downloaded and unzipped successfuly"
 
 # Load the database driver, depending on the addon linked
 if [[ -n "${POSTGRESQL_ADDON_URI}" ]]; then
-	KC_DB="postgres"
+	export KC_DB="postgres"
 fi
 
 if [[ -n "${MYSQL_ADDON_URI}" ]]; then
-	KC_DB="mysql"
+	export KC_DB="mysql"
 fi
 
 keycloak/bin/kc.sh build
