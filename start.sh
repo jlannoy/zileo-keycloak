@@ -8,19 +8,15 @@ fi
 
 # Check if a postgres or mysql addon is linked to this application, in order to get the URI of database
 if [[ -n "${POSTGRESQL_ADDON_URI}" ]]; then
-	KC_DB="postgres"
-	KC_DB_URL="jdbc:postgresql://${POSTGRESQL_ADDON_HOST}:${POSTGRESQL_ADDON_PORT}/${POSTGRESQL_ADDON_DB}"
-	KC_DB_USERNAME="${POSTGRESQL_ADDON_USER}"
-	KC_DB_PASSWORD="${POSTGRESQL_ADDON_PASSWORD}"
+	export KC_DB_URL="jdbc:postgresql://${POSTGRESQL_ADDON_HOST}:${POSTGRESQL_ADDON_PORT}/${POSTGRESQL_ADDON_DB}"
+	export KC_DB_USERNAME="${POSTGRESQL_ADDON_USER}"
+	export KC_DB_PASSWORD="${POSTGRESQL_ADDON_PASSWORD}"
 fi
 
 if [[ -n "${MYSQL_ADDON_URI}" ]]; then
-	KC_DB="mysql"
-	KC_DB_URL="jdbc:mysql://${MYSQL_ADDON_HOST}:${MYSQL_ADDON_PORT}/${MYSQL_ADDON_DB}"
-	KC_DB_USERNAME="${MYSQL_ADDON_USER}"
-	KC_DB_PASSWORD="${MYSQL_ADDON_PASSWORD}"
+	export KC_DB_URL="jdbc:mysql://${MYSQL_ADDON_HOST}:${MYSQL_ADDON_PORT}/${MYSQL_ADDON_DB}"
+	export KC_DB_USERNAME="${MYSQL_ADDON_USER}"
+	export KC_DB_PASSWORD="${MYSQL_ADDON_PASSWORD}"
 fi
-
-echo "Sarting KC with ${KC_DB}";
 
 keycloak/bin/kc.sh start --proxy edge
