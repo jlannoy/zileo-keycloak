@@ -22,4 +22,6 @@ if [[ -n "${MYSQL_ADDON_URI}" ]]; then
 	export KC_DB="mysql"
 fi
 
+cp custom-themes/* keycloak/themes/
+
 keycloak/bin/kc.sh build
